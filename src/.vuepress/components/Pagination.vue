@@ -1,7 +1,13 @@
 <template>
-    <div>pagination</div>
+    <ul class="pagination">
+        <li v-for="page in pages" :key="page">
+            {{page}}
+        </li>
+    </ul>
 </template>
 <script>
+import { range } from '../helpers/utils';
+
 export default {
     name: 'Pagination',
     props: {
@@ -13,7 +19,7 @@ export default {
             type: Number,
             required: true
         },
-        currenPage: {
+        currentPage: {
             type: Number,
             required: true
         },
@@ -25,7 +31,7 @@ export default {
     computed: {
         pages() {
             const pagesCount = this.total / this.limit;
-            
+            return range(1, pagesCount);
         }
     }
     
