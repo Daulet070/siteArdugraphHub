@@ -52,7 +52,13 @@ export default {
         height: auto;
         border: 1px solid #000;
         color: inherit;
+
+        &:hover:not(.active) {
+            background-color: #3eaf7c;
+            color: #fff;
+        }
     }
+    
     &-page-link {
         background-color: transparent;
         padding: .2em .8em;
@@ -60,10 +66,6 @@ export default {
         transition: all .2s ease;
         color: inherit;
 
-        &:hover {
-            background-color: #3eaf7c;
-            color: #fff;
-        }
     }
 }
 .active {
