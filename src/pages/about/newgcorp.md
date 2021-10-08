@@ -1,0 +1,3 @@
+## NewGCorp
+
+Мы NewGCorp - ...
