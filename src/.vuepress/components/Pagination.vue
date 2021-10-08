@@ -1,7 +1,9 @@
 <template>
     <ul class="pagination">
-        <li v-for="page in pages" :key="page">
-            {{page}}
+        <li v-for="page in pages" :key="page" class="pagination-item" :class="{active: currentPage === page}">
+            <router-link :to="{path: url, query: {page: page}}" class="pagination-page-link">
+                {{page}}
+            </router-link>
         </li>
     </ul>
 </template>
@@ -38,5 +40,34 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    list-style: none;
 
+    &-item {
+        display: inline-flex;
+        width: fit-content;
+        height: auto;
+        border: 1px solid #000;
+        color: inherit;
+    }
+    &-page-link {
+        background-color: transparent;
+        padding: .2em .8em;
+        text-decoration: none !important;
+        transition: all .2s ease;
+        color: inherit;
+
+        &:hover {
+            background-color: #3eaf7c;
+            color: #fff;
+        }
+    }
+}
+.active {
+    background-color: #3eaf7c;
+    color: #fff;
+}
 </style>
