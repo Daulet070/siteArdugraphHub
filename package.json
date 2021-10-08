@@ -4,7 +4,8 @@
   "description": "Init README",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "vuepress dev src",
+    "build": "vuepress build src"
   },
   "repository": {
     "type": "git",
@@ -17,9 +18,13 @@
   },
   "homepage": "https://github.com/Daulet070/siteArdugraphHub#readme",
   "devDependencies": {
+    "@vuepress/plugin-pwa": "^1.8.2",
     "eslint": "^7.2.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
+    "sass": "^1.42.1",
+    "sass-loader": "^10.2.0",
+    "vuepress": "^1.8.2",
     "webp-converter": "^2.3.3"
   },
   "dependencies": {}
